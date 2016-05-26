@@ -1,0 +1,4 @@
+En este repositorio se encuentran los archivos usados para la creación y la presentación de las diapositivas
+se libre de usarlo y difundirlo a tu gusto.
+
+*NOTA:* /Los tokens que os encontreis (si es que queda alguno) estan revocados. Es mas los bots usados estan borrados :)/
