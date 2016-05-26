@@ -1,0 +1,334 @@
+#+Title: Telegram Bots
+#+Author: @CesharPaste
+#+Email:SexyACM@BestAsocEUW.io
+
+#+LANGUAGE: es
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 24.5.1 (Org mode 8.3.2)
+#+LATEX_CLASS_OPTIONS: [a4paper,hidelinks]
+
+#+LATEX_CLASS_OPTIONS: [...,hidelinks]
+
+#+OPTIONS: reveal_center:t reveal_progress:t reveal_history:t reveal_control:t
+#+OPTIONS: reveal_rolling_links:nil reveal_keyboard:t reveal_overview:t num:nil
+#+OPTIONS: reveal_slide_number:h/v
+#+OPTIONS: reveal_width:1200 reveal_height:800
+#+REVEAL_MARGIN: 0.1
+#+REVEAL_MIN_SCALE: 0.5
+#+REVEAL_MAX_SCALE: 2.5
+#+REVEAL_TRANS: linear
+#+REVEAL_THEME: blood
+#+REVEAL_HLEVEL: 1
+#+REVEAL_EXTRA_CSS: ./acm.css
+#+REVEAL_HEAD_PREAMBLE: <meta name="description" content="EmacsFTW.">
+#+REVEAL_PLUGINS: (markdown notes zoom multiplex classList)
+#+REVEAL_EXTRA_JS: { src: './acm.js', async: true }
+
+#+OPTIONS: toc:nil
+# #+OPTIONS: reveal_single_file:t
+
+# Read: https://github.com/yjwen/org-reveal/
+
+
+* Dafuq is a Telegram bot?
+[[./data/dafuq_meme.jpg]]
+
+
+"/*Bots* are simply Telegram accounts operated by software, *not people*/"
+
+* Como funciona?
+[[./data/yoqsetio.gif]]
+** Que necesitas?
+- Python 3
+- pip 3
+- Un token de un bot
+** Token?
+Yep, un TOKEN!
+
+El cual nunca deberéis compartir ni subir a GitHub...
+
+El TOKEN nos lo dará @BotFather
+
+* Empecemos!
+Instalar con vuestro gestor de paquetes:
+
+- python
+- python-pip
+
+*Python 3* please!
+
+** Instalar la API
+A mano:
+#+BEGIN_SRC bash
+$ git clone https://github.com/eternnoir/pyTelegramBotAPI.git
+$ cd pyTelegramBotApi
+$ python3 setup.py install
+#+END_SRC
+
+** Ahora a por el *TOKEN*
+[[./data/token1.jpg]]
+
+** Ya esta todo listo! Ahora a programar
+- Crear la carpeta donde vamos a hacer nuestro proyecto
+#+BEGIN_SRC bash
+$ mkdir MyBot
+$ cd MyBot
+#+END_SRC
+
+- El archivo en el cual escribiremos nuestro código
+#+BEGIN_SRC bash
+$ touch bot.py
+#+END_SRC
+
+** Perooo... Que escribo?
+- Lo primerísimo de todo, importar la librería
+
+#+BEGIN_SRC python
+import telebot
+#+END_SRC
+
+- Y crear el objeto *bot* con nuestro precioso *token*
+
+#+BEGIN_SRC python
+bot = telebot.TeleBot("TOKEN")
+#+END_SRC
+
+** Handlers
+- Un handler es lo que va a permitir a tu bot saber cuándo le estás hablando
+
+#+BEGIN_SRC python
+@bot.message_handler(commands=['patata'])
+def patata(message):
+    # Lo que haga patata
+#+END_SRC
+
+** Ejemplo
+
+#+BEGIN_SRC python
+@bot.message_handler(commands=['hello'])
+def hello(message):
+    bot.reply_to(message, "Hello Telegram")
+#+END_SRC
+
+La función *reply_ to* contesta al objeto *message*
+
+** Well done
+Ahora falta el *long polling*, que básicamente es que el bot le pregunte al servidor si hay algo para él (Muy muy resumidamente)
+
+Para ello haremos lo siguiente:
+
+#+BEGIN_SRC python
+bot.polling()
+#+END_SRC
+
+** TIP
+Al ejecutar nuestro bot puede dar la sensación de que se ha quedado colgado
+
+Para sacarnos de dudas podemos poner un *print* cuando hagamos el polling
+
+Tal que así:
+#+BEGIN_SRC python
+print("Running...")
+bot.polling()
+#+END_SRC
+
+** Ejemplo completo
+#+BEGIN_SRC python
+import telebot
+
+bot = telebot.TeleBot("9823982:aeoEOHtejhonHJeojhoEUoEUotaToIPC")
+
+@bot.message_handler(commands=['hello'])
+def hello(message):
+    bot.reply_to(message, "Hello Telegram")
+
+print("Running...")
+bot.polling()
+#+END_SRC
+
+** TIP 2
+Documentar vuestro código, es de muuuuuuuuucha ayuda
+
+#+BEGIN_SRC python
+import telebot
+
+# Creamos el bot
+bot = telebot.TeleBot("9823982:aeoEOHtejhonHJeojhoEUoEUotaToIPC")
+
+# Handlers
+@bot.message_handler(commands=['hello'])
+def hello(message):
+    # Envia un mensaje al recibir /hello
+    bot.reply_to(message, "Hello Telegram")
+
+# Iniciamos el polling
+print("Running...")
+bot.polling()
+#+END_SRC
+
+* Ahora a probarlo!
+En una terminal vamos al directorio del bot y escribimos:
+
+#+BEGIN_SRC bash
+$ python bot.py
+#+END_SRC
+
+El resultado es el siguiente:
+
+[[./data/running_bot.jpg]]
+
+** Nuestro bot ya está funcionando!
+
+[[./data/testing_bot.jpg]]
+
+* Predicción de comandos en BotFather
+Esto se hace desde Telegram!
+* Funciones que puede hacer el bot
+- reply_ to :: /Contesta a un mensaje/
+- send_ message :: /Envía un mensaje al chat que le indiquemos/
+- send_ photo :: /Envía una foto al chat que le indiquemos/
+- send_ audio :: /Envía un audio al chat que le indiquemos/
+
+Y muchas más...
+
+https://core.telegram.org/bots/api#available-methods
+* Inline bots
+Peroo... HAY MÁS!?
+
+[[./data/wtf.gif]]
+
+** Of course!
+*@gif* es un bot inline.
+
+Puedes "hablar" con el desde cualquier chat aunque no esté en él.
+
+[[./data/gif_bot.gif]]
+
+** Como lo iso!!
+Con *inline handler*
+
+[[./data/magic.gif]]
+
+** Inline Handler
+#+BEGIN_SRC python
+@bot.inline_handler(lambda query: ... )
+def inline_function(query):
+    # Inline function
+
+#+END_SRC
+** OMG lambda functions
+No es para tanto
+** Lambda functions en Python
+Es una función anónima que nos permite hacer lo siguiente.
+
+#+BEGIN_SRC python
+>>> g = lambda x: x**2
+>>> g(3)
+9
+#+END_SRC
+
+En vez de esto:
+
+#+BEGIN_SRC python
+>>> def al_cuadrado(x):
+...     return x**2
+>>> al_cuadrado(3)
+9
+#+END_SRC
+** Ventajas
+[[./data/yoqsetio.gif]]
+** Lo que nos interesa
+Usarla como trigger para nuestras funciones
+#+BEGIN_SRC python
+@bot.inline_handler(lambda query: condición )
+def inline_function(inline_query):
+    # Inline function
+#+END_SRC
+
+En este caso si escriben *@awesome_ name_ for_ a_ bot hola*:
+#+BEGIN_SRC python
+@bot.inline_handler(lambda query: query.query == "hola")
+def inline_function(inline_query):
+    # Inline function
+#+END_SRC
+
+/Aunque también nos valen funciones normales, las *lambda* suelen ser más cómodas/
+
+** Ahora cambia la cosa
+#+BEGIN_SRC python
+resultado = types.InlineQueryResultArticle(ID, Titulo, AEnviar)
+#+END_SRC
+
+- ID :: Identificador del resultado
+- Título :: Título de la función que va a hacer el bot
+- A enviar :: Lo que enviará el bot al chat
+** Aquí se ve mejor
+[[./data/inline_list.jpg]]
+
+[[./data/inline_respuesta.jpg]]
+** Le decimos al bot lo que tiene que enviar
+#+BEGIN_SRC python
+bot.answer_inline_query(donde, [que])
+#+END_SRC
+
+- donde :: A donde lo enviamos
+- que :: Qué enviamos
+** Ejemplo
+#+BEGIN_SRC python
+bot.answer_inline_query(inline_query.id, [r])
+#+END_SRC
+** Ejemplo completo
+#+BEGIN_SRC python
+@bot.inline_handler(lambda query: query.query == "hola")
+def hola(inline_query):
+    r = types.InlineQueryResultArticle('1', 'Saludo', types.InputTextMessageContent("Well hello!"))
+    bot.answer_inline_query(inline_query.id, [r])
+#+END_SRC
+
+Lo que nos sale para dar click
+:
+[[./data/inline_saludo1.jpg]] 
+
+Lo que contesta el bot:
+
+[[./data/inline_saludo2.jpg]]
+** Ejemplo completo
+#+BEGIN_SRC python
+import telebot
+from telebot import types
+
+# Creamos el bot
+bot = telebot.TeleBot("201337136:AAHc5lIPPqAFqAcX6bNMTNV2pFTzlbzsJtI")
+
+
+@bot.inline_handler(lambda query: query.query == "hola")
+def hola(inline_query):
+    # Envia Well Hello
+    r = types.InlineQueryResultArticle('1', 'Saludo', types.InputTextMessageContent("Well hello!"))
+    bot.answer_inline_query(inline_query.id, [r])
+
+# Iniciamos el bot
+print("Running...")
+bot.polling()
+#+END_SRC
+** Permitir inline
+Una vez más acudiremos a BotFather
+
+[[./data/set_inline.jpg]]
+* De donde puedo aprender cosas?
+
+La API está bastante bien documentada con los ejemplos
+
+https://github.com/eternnoir/pyTelegramBotAPI/tree/master/examples
+
+** Ejemplos que encontréis por ahí
+- El bot de ACM
+https://github.com/acmfi/ACMbot/tree/dev
+
+- Bots propios
+https://github.com/Ironjanowar/SaveLinksBot
+
+https://github.com/Ironjanowar/TheConvertorBot/ ← Inline
+
+
