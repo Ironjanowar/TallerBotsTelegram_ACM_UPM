@@ -4,9 +4,15 @@
 <meta charset="utf-8"/>
 <title>Telegram Bots</title>
 <meta name="author" content="(@CesharPaste)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
 <link rel="stylesheet" href="file:///home/ironjanowar/reveal.js/css/reveal.css"/>
+
 <link rel="stylesheet" href="file:///home/ironjanowar/reveal.js/css/theme/blood.css" id="theme"/>
+
 <link rel="stylesheet" href="./acm.css"/>
+<link rel="stylesheet" href="file:///home/ironjanowar/reveal.js/lib/css/zenburn.css"/>
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
 <script>
     if( window.location.search.match( /print-pdf/gi ) ) {
@@ -22,16 +28,12 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide">
-<h1>Telegram Bots</h1>
-<h2>@CesharPaste</h2>
-<h2><a href="mailto:SexyACM@BestAsocEUW.io">SexyACM@BestAsocEUW.io</a></h2>
-<h2></h2>
+<section id="sec-title-slide"><h1 class="title">Telegram Bots</h1><h2 class="author">@CesharPaste</h2><p class="date">Created: 2016-12-03 sáb 00:08</p>
 </section>
 
 <section>
-<section id="slide-orgheadline1">
-<h2 id="orgheadline1">Dafuq is a Telegram bot?</h2>
+<section id="slide-org9381b5e">
+<h2 id="org9381b5e">Dafuq is a Telegram bot?</h2>
 
 <div class="figure">
 <p><img src="./data/dafuq_meme.jpg" alt="dafuq_meme.jpg" />
@@ -46,16 +48,16 @@
 </section>
 </section>
 <section>
-<section id="slide-orgheadline4">
-<h2 id="orgheadline4">Como funciona?</h2>
+<section id="slide-org9046186">
+<h2 id="org9046186">Como funciona?</h2>
 
 <div class="figure">
 <p><img src="./data/yoqsetio.gif" alt="yoqsetio.gif" />
 </p>
 </div>
 </section>
-<section id="slide-orgheadline2">
-<h3 id="orgheadline2">Que necesitas?</h3>
+<section id="slide-org3406819">
+<h3 id="org3406819">Que necesitas?</h3>
 <ul>
 <li>Python 3</li>
 <li>pip 3</li>
@@ -63,8 +65,8 @@
 
 </ul>
 </section>
-<section id="slide-orgheadline3">
-<h3 id="orgheadline3">Token?</h3>
+<section id="slide-orgbef9aec">
+<h3 id="orgbef9aec">Token?</h3>
 <p>
 Yep, un TOKEN!
 </p>
@@ -80,8 +82,8 @@ El TOKEN nos lo dará @BotFather
 </section>
 </section>
 <section>
-<section id="slide-orgheadline15">
-<h2 id="orgheadline15">Empecemos!</h2>
+<section id="slide-orga56a5d4">
+<h2 id="orga56a5d4">Empecemos!</h2>
 <p>
 Instalar con vuestro gestor de paquetes:
 </p>
@@ -97,22 +99,22 @@ Instalar con vuestro gestor de paquetes:
 </p>
 
 </section>
-<section id="slide-orgheadline5">
-<h3 id="orgheadline5">Instalar la API</h3>
+<section id="slide-orgd3c7a95">
+<h3 id="orgd3c7a95">Instalar la API</h3>
 <p>
 A mano:
 </p>
 <div class="org-src-container">
 
-<pre  class="src src-bash">$ git clone https://github.com/eternnoir/pyTelegramBotAPI.git
+<pre><code class="bash" >$ git clone https://github.com/eternnoir/pyTelegramBotAPI.git
 $ cd pyTelegramBotApi
 $ python3 setup.py install
-</pre>
+</code></pre>
 </div>
 
 </section>
-<section id="slide-orgheadline6">
-<h3 id="orgheadline6">Ahora a por el <b>TOKEN</b></h3>
+<section id="slide-org7a9bfa8">
+<h3 id="org7a9bfa8">Ahora a por el <b>TOKEN</b></h3>
 
 <div class="figure">
 <p><img src="./data/token1.jpg" alt="token1.jpg" />
@@ -120,17 +122,17 @@ $ python3 setup.py install
 </div>
 
 </section>
-<section id="slide-orgheadline7">
-<h3 id="orgheadline7">Ya esta todo listo! Ahora a programar</h3>
+<section id="slide-org098e31c">
+<h3 id="org098e31c">Ya esta todo listo! Ahora a programar</h3>
 <ul>
 <li>Crear la carpeta donde vamos a hacer nuestro proyecto</li>
 
 </ul>
 <div class="org-src-container">
 
-<pre  class="src src-bash">$ mkdir MyBot
+<pre><code class="bash" >$ mkdir MyBot
 $ cd MyBot
-</pre>
+</code></pre>
 </div>
 
 <ul>
@@ -139,13 +141,13 @@ $ cd MyBot
 </ul>
 <div class="org-src-container">
 
-<pre  class="src src-bash">$ touch bot.py
-</pre>
+<pre><code class="bash" >$ touch bot.py
+</code></pre>
 </div>
 
 </section>
-<section id="slide-orgheadline8">
-<h3 id="orgheadline8">Perooo&#x2026; Que escribo?</h3>
+<section id="slide-orga855974">
+<h3 id="orga855974">Perooo&#x2026; Que escribo?</h3>
 <ul>
 <li>Lo primerísimo de todo, importar la librería</li>
 
@@ -153,8 +155,8 @@ $ cd MyBot
 
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #F92672;">import</span> telebot
-</pre>
+<pre><code class="python" >import telebot
+</code></pre>
 </div>
 
 <ul>
@@ -164,13 +166,13 @@ $ cd MyBot
 
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #FD971F;">bot</span> = telebot.TeleBot<span style="color: #A1EFE4;">(</span><span style="color: #E6DB74;">"TOKEN"</span><span style="color: #A1EFE4;">)</span>
-</pre>
+<pre><code class="python" >bot = telebot.TeleBot("TOKEN")
+</code></pre>
 </div>
 
 </section>
-<section id="slide-orgheadline9">
-<h3 id="orgheadline9">Handlers</h3>
+<section id="slide-orgcde48cc">
+<h3 id="orgcde48cc">Handlers</h3>
 <ul>
 <li>Un handler es lo que va a permitir a tu bot saber cuándo le estás hablando</li>
 
@@ -178,21 +180,21 @@ $ cd MyBot
 
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #66D9EF;">@bot.message_handler</span><span style="color: #A1EFE4;">(</span>commands=<span style="color: #E6DB74;">[</span><span style="color: #E6DB74;">'patata'</span><span style="color: #E6DB74;">]</span><span style="color: #A1EFE4;">)</span>
-<span style="color: #F92672;">def</span> <span style="color: #A6E22E;">patata</span><span style="color: #A1EFE4;">(</span>message<span style="color: #A1EFE4;">)</span>:
-    <span style="color: #75715E;"># </span><span style="color: #75715E;">Lo que haga patata</span>
-</pre>
+<pre><code class="python" >@bot.message_handler(commands=['patata'])
+def patata(message):
+    # Lo que haga patata
+</code></pre>
 </div>
 
 </section>
-<section id="slide-orgheadline10">
-<h3 id="orgheadline10">Ejemplo</h3>
+<section id="slide-org6d7acea">
+<h3 id="org6d7acea">Ejemplo</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #66D9EF;">@bot.message_handler</span><span style="color: #A1EFE4;">(</span>commands=<span style="color: #E6DB74;">[</span><span style="color: #E6DB74;">'hello'</span><span style="color: #E6DB74;">]</span><span style="color: #A1EFE4;">)</span>
-<span style="color: #F92672;">def</span> <span style="color: #A6E22E;">hello</span><span style="color: #A1EFE4;">(</span>message<span style="color: #A1EFE4;">)</span>:
-    bot.reply_to<span style="color: #A1EFE4;">(</span>message, <span style="color: #E6DB74;">"Hello Telegram"</span><span style="color: #A1EFE4;">)</span>
-</pre>
+<pre><code class="python" >@bot.message_handler(commands=['hello'])
+def hello(message):
+    bot.reply_to(message, "Hello Telegram")
+</code></pre>
 </div>
 
 <p>
@@ -200,8 +202,8 @@ La función <b>reply_ to</b> contesta al objeto <b>message</b>
 </p>
 
 </section>
-<section id="slide-orgheadline11">
-<h3 id="orgheadline11">Well done</h3>
+<section id="slide-orgb68ed62">
+<h3 id="orgb68ed62">Well done</h3>
 <p>
 Ahora falta el <b>long polling</b>, que básicamente es que el bot le pregunte al servidor si hay algo para él (Muy muy resumidamente)
 </p>
@@ -212,13 +214,13 @@ Para ello haremos lo siguiente:
 
 <div class="org-src-container">
 
-<pre  class="src src-python">bot.polling<span style="color: #A1EFE4;">()</span>
-</pre>
+<pre><code class="python" >bot.polling()
+</code></pre>
 </div>
 
 </section>
-<section id="slide-orgheadline12">
-<h3 id="orgheadline12">TIP</h3>
+<section id="slide-org7b53a79">
+<h3 id="org7b53a79">TIP</h3>
 <p>
 Al ejecutar nuestro bot puede dar la sensación de que se ha quedado colgado
 </p>
@@ -232,68 +234,68 @@ Tal que así:
 </p>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #F92672;">print</span><span style="color: #A1EFE4;">(</span><span style="color: #E6DB74;">"Running..."</span><span style="color: #A1EFE4;">)</span>
-bot.polling<span style="color: #A1EFE4;">()</span>
-</pre>
+<pre><code class="python" >print("Running...")
+bot.polling()
+</code></pre>
 </div>
 
 </section>
-<section id="slide-orgheadline13">
-<h3 id="orgheadline13">Ejemplo completo</h3>
+<section id="slide-org5eaedf7">
+<h3 id="org5eaedf7">Ejemplo completo</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #F92672;">import</span> telebot
+<pre><code class="python" >import telebot
 
-<span style="color: #FD971F;">bot</span> = telebot.TeleBot<span style="color: #A1EFE4;">(</span><span style="color: #E6DB74;">"9823982:aeoEOHtejhonHJeojhoEUoEUotaToIPC"</span><span style="color: #A1EFE4;">)</span>
+bot = telebot.TeleBot("9823982:aeoEOHtejhonHJeojhoEUoEUotaToIPC")
 
-<span style="color: #66D9EF;">@bot.message_handler</span><span style="color: #A1EFE4;">(</span>commands=<span style="color: #E6DB74;">[</span><span style="color: #E6DB74;">'hello'</span><span style="color: #E6DB74;">]</span><span style="color: #A1EFE4;">)</span>
-<span style="color: #F92672;">def</span> <span style="color: #A6E22E;">hello</span><span style="color: #A1EFE4;">(</span>message<span style="color: #A1EFE4;">)</span>:
-    bot.reply_to<span style="color: #A1EFE4;">(</span>message, <span style="color: #E6DB74;">"Hello Telegram"</span><span style="color: #A1EFE4;">)</span>
+@bot.message_handler(commands=['hello'])
+def hello(message):
+    bot.reply_to(message, "Hello Telegram")
 
-<span style="color: #F92672;">print</span><span style="color: #A1EFE4;">(</span><span style="color: #E6DB74;">"Running..."</span><span style="color: #A1EFE4;">)</span>
-bot.polling<span style="color: #A1EFE4;">()</span>
-</pre>
+print("Running...")
+bot.polling()
+</code></pre>
 </div>
 
 </section>
-<section id="slide-orgheadline14">
-<h3 id="orgheadline14">TIP 2</h3>
+<section id="slide-orgf61a3c9">
+<h3 id="orgf61a3c9">TIP 2</h3>
 <p>
 Documentar vuestro código, es de muuuuuuuuucha ayuda
 </p>
 
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #F92672;">import</span> telebot
+<pre><code class="python" >import telebot
 
-<span style="color: #75715E;"># </span><span style="color: #75715E;">Creamos el bot</span>
-<span style="color: #FD971F;">bot</span> = telebot.TeleBot<span style="color: #A1EFE4;">(</span><span style="color: #E6DB74;">"9823982:aeoEOHtejhonHJeojhoEUoEUotaToIPC"</span><span style="color: #A1EFE4;">)</span>
+# Creamos el bot
+bot = telebot.TeleBot("9823982:aeoEOHtejhonHJeojhoEUoEUotaToIPC")
 
-<span style="color: #75715E;"># </span><span style="color: #75715E;">Handlers</span>
-<span style="color: #66D9EF;">@bot.message_handler</span><span style="color: #A1EFE4;">(</span>commands=<span style="color: #E6DB74;">[</span><span style="color: #E6DB74;">'hello'</span><span style="color: #E6DB74;">]</span><span style="color: #A1EFE4;">)</span>
-<span style="color: #F92672;">def</span> <span style="color: #A6E22E;">hello</span><span style="color: #A1EFE4;">(</span>message<span style="color: #A1EFE4;">)</span>:
-    <span style="color: #75715E;"># </span><span style="color: #75715E;">Envia un mensaje al recibir /hello</span>
-    bot.reply_to<span style="color: #A1EFE4;">(</span>message, <span style="color: #E6DB74;">"Hello Telegram"</span><span style="color: #A1EFE4;">)</span>
+# Handlers
+@bot.message_handler(commands=['hello'])
+def hello(message):
+    # Envia un mensaje al recibir /hello
+    bot.reply_to(message, "Hello Telegram")
 
-<span style="color: #75715E;"># </span><span style="color: #75715E;">Iniciamos el polling</span>
-<span style="color: #F92672;">print</span><span style="color: #A1EFE4;">(</span><span style="color: #E6DB74;">"Running..."</span><span style="color: #A1EFE4;">)</span>
-bot.polling<span style="color: #A1EFE4;">()</span>
-</pre>
+# Iniciamos el polling
+print("Running...")
+bot.polling()
+</code></pre>
 </div>
 
 </section>
 </section>
 <section>
-<section id="slide-orgheadline17">
-<h2 id="orgheadline17">Ahora a probarlo!</h2>
+<section id="slide-org74ab87f">
+<h2 id="org74ab87f">Ahora a probarlo!</h2>
 <p>
 En una terminal vamos al directorio del bot y escribimos:
 </p>
 
 <div class="org-src-container">
 
-<pre  class="src src-bash">$ python bot.py
-</pre>
+<pre><code class="bash" >$ python bot.py
+</code></pre>
 </div>
 
 <p>
@@ -307,8 +309,8 @@ El resultado es el siguiente:
 </div>
 
 </section>
-<section id="slide-orgheadline16">
-<h3 id="orgheadline16">Nuestro bot ya está funcionando!</h3>
+<section id="slide-org8c213d3">
+<h3 id="org8c213d3">Nuestro bot ya está funcionando!</h3>
 
 <div class="figure">
 <p><img src="./data/testing_bot.jpg" alt="testing_bot.jpg" />
@@ -318,16 +320,16 @@ El resultado es el siguiente:
 </section>
 </section>
 <section>
-<section id="slide-orgheadline18">
-<h2 id="orgheadline18">Predicción de comandos en BotFather</h2>
+<section id="slide-orga71edea">
+<h2 id="orga71edea">Predicción de comandos en BotFather</h2>
 <p>
 Esto se hace desde Telegram!
 </p>
 </section>
 </section>
 <section>
-<section id="slide-orgheadline19">
-<h2 id="orgheadline19">Funciones que puede hacer el bot</h2>
+<section id="slide-orga431652">
+<h2 id="orga431652">Funciones que puede hacer el bot</h2>
 <dl>
 <dt>reply_ to</dt><dd><i>Contesta a un mensaje</i></dd>
 <dt>send_ message</dt><dd><i>Envía un mensaje al chat que le indiquemos</i></dd>
@@ -346,8 +348,8 @@ Y muchas más&#x2026;
 </section>
 </section>
 <section>
-<section id="slide-orgheadline34">
-<h2 id="orgheadline34">Inline bots</h2>
+<section id="slide-org1e61964">
+<h2 id="org1e61964">Inline bots</h2>
 <p>
 Peroo&#x2026; HAY MÁS!?
 </p>
@@ -359,8 +361,8 @@ Peroo&#x2026; HAY MÁS!?
 </div>
 
 </section>
-<section id="slide-orgheadline20">
-<h3 id="orgheadline20">Of course!</h3>
+<section id="slide-orgb106cd7">
+<h3 id="orgb106cd7">Of course!</h3>
 <p>
 <b>@gif</b> es un bot inline.
 </p>
@@ -376,8 +378,8 @@ Puedes "hablar" con el desde cualquier chat aunque no esté en él.
 </div>
 
 </section>
-<section id="slide-orgheadline21">
-<h3 id="orgheadline21">Como lo iso!!</h3>
+<section id="slide-org7a730b4">
+<h3 id="org7a730b4">Como lo iso!!</h3>
 <p>
 Con <b>inline handler</b>
 </p>
@@ -389,34 +391,34 @@ Con <b>inline handler</b>
 </div>
 
 </section>
-<section id="slide-orgheadline22">
-<h3 id="orgheadline22">Inline Handler</h3>
+<section id="slide-org1eca4bc">
+<h3 id="org1eca4bc">Inline Handler</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #66D9EF;">@bot.inline_handler</span><span style="color: #A1EFE4;">(</span><span style="color: #F92672;">lambda</span> query: ... <span style="color: #A1EFE4;">)</span>
-<span style="color: #F92672;">def</span> <span style="color: #A6E22E;">inline_function</span><span style="color: #A1EFE4;">(</span>query<span style="color: #A1EFE4;">)</span>:
-    <span style="color: #75715E;"># </span><span style="color: #75715E;">Inline function</span>
-</pre>
+<pre><code class="python" >@bot.inline_handler(lambda query: ... )
+def inline_function(query):
+    # Inline function
+</code></pre>
 </div>
 </section>
-<section id="slide-orgheadline23">
-<h3 id="orgheadline23">OMG lambda functions</h3>
+<section id="slide-orgdbd10e2">
+<h3 id="orgdbd10e2">OMG lambda functions</h3>
 <p>
 No es para tanto
 </p>
 </section>
-<section id="slide-orgheadline24">
-<h3 id="orgheadline24">Lambda functions en Python</h3>
+<section id="slide-org6248b8e">
+<h3 id="org6248b8e">Lambda functions en Python</h3>
 <p>
 Es una función anónima que nos permite hacer lo siguiente.
 </p>
 
 <div class="org-src-container">
 
-<pre  class="src src-python">&gt;&gt;&gt; <span style="color: #FD971F;">g</span> = <span style="color: #F92672;">lambda</span> x: x**2
-&gt;&gt;&gt; g<span style="color: #A1EFE4;">(</span>3<span style="color: #A1EFE4;">)</span>
+<pre><code class="python" >&gt;&gt;&gt; g = lambda x: x**2
+&gt;&gt;&gt; g(3)
 9
-</pre>
+</code></pre>
 </div>
 
 <p>
@@ -425,32 +427,32 @@ En vez de esto:
 
 <div class="org-src-container">
 
-<pre  class="src src-python">&gt;&gt;&gt; <span style="color: #F92672;">def</span> <span style="color: #A6E22E;">al_cuadrado</span><span style="color: #A1EFE4;">(</span>x<span style="color: #A1EFE4;">)</span>:
-...     <span style="color: #F92672;">return</span> x**2
-&gt;&gt;&gt; al_cuadrado<span style="color: #A1EFE4;">(</span>3<span style="color: #A1EFE4;">)</span>
+<pre><code class="python" >&gt;&gt;&gt; def al_cuadrado(x):
+...     return x**2
+&gt;&gt;&gt; al_cuadrado(3)
 9
-</pre>
+</code></pre>
 </div>
 </section>
-<section id="slide-orgheadline25">
-<h3 id="orgheadline25">Ventajas</h3>
+<section id="slide-orgccd45d7">
+<h3 id="orgccd45d7">Ventajas</h3>
 
 <div class="figure">
 <p><img src="./data/yoqsetio.gif" alt="yoqsetio.gif" />
 </p>
 </div>
 </section>
-<section id="slide-orgheadline26">
-<h3 id="orgheadline26">Lo que nos interesa</h3>
+<section id="slide-orgbc51559">
+<h3 id="orgbc51559">Lo que nos interesa</h3>
 <p>
 Usarla como trigger para nuestras funciones
 </p>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #66D9EF;">@bot.inline_handler</span><span style="color: #A1EFE4;">(</span><span style="color: #F92672;">lambda</span> query: condici&#243;n <span style="color: #A1EFE4;">)</span>
-<span style="color: #F92672;">def</span> <span style="color: #A6E22E;">inline_function</span><span style="color: #A1EFE4;">(</span>inline_query<span style="color: #A1EFE4;">)</span>:
-    <span style="color: #75715E;"># </span><span style="color: #75715E;">Inline function</span>
-</pre>
+<pre><code class="python" >@bot.inline_handler(lambda query: condición )
+def inline_function(inline_query):
+    # Inline function
+</code></pre>
 </div>
 
 <p>
@@ -458,10 +460,10 @@ En este caso si escriben <b>@awesome_ name_ for_ a_ bot hola</b>:
 </p>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #66D9EF;">@bot.inline_handler</span><span style="color: #A1EFE4;">(</span><span style="color: #F92672;">lambda</span> query: query.query == <span style="color: #E6DB74;">"hola"</span><span style="color: #A1EFE4;">)</span>
-<span style="color: #F92672;">def</span> <span style="color: #A6E22E;">inline_function</span><span style="color: #A1EFE4;">(</span>inline_query<span style="color: #A1EFE4;">)</span>:
-    <span style="color: #75715E;"># </span><span style="color: #75715E;">Inline function</span>
-</pre>
+<pre><code class="python" >@bot.inline_handler(lambda query: query.query == "hola")
+def inline_function(inline_query):
+    # Inline function
+</code></pre>
 </div>
 
 <p>
@@ -469,12 +471,12 @@ En este caso si escriben <b>@awesome_ name_ for_ a_ bot hola</b>:
 </p>
 
 </section>
-<section id="slide-orgheadline27">
-<h3 id="orgheadline27">Ahora cambia la cosa</h3>
+<section id="slide-org99845e8">
+<h3 id="org99845e8">Ahora cambia la cosa</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #FD971F;">resultado</span> = types.InlineQueryResultArticle<span style="color: #A1EFE4;">(</span>ID, Titulo, AEnviar<span style="color: #A1EFE4;">)</span>
-</pre>
+<pre><code class="python" >resultado = types.InlineQueryResultArticle(ID, Titulo, AEnviar)
+</code></pre>
 </div>
 
 <dl>
@@ -484,8 +486,8 @@ En este caso si escriben <b>@awesome_ name_ for_ a_ bot hola</b>:
 
 </dl>
 </section>
-<section id="slide-orgheadline28">
-<h3 id="orgheadline28">Aquí se ve mejor</h3>
+<section id="slide-orga1e56a3">
+<h3 id="orga1e56a3">Aquí se ve mejor</h3>
 
 <div class="figure">
 <p><img src="./data/inline_list.jpg" alt="inline_list.jpg" />
@@ -498,12 +500,12 @@ En este caso si escriben <b>@awesome_ name_ for_ a_ bot hola</b>:
 </p>
 </div>
 </section>
-<section id="slide-orgheadline29">
-<h3 id="orgheadline29">Le decimos al bot lo que tiene que enviar</h3>
+<section id="slide-orgb0ae7a0">
+<h3 id="orgb0ae7a0">Le decimos al bot lo que tiene que enviar</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python">bot.answer_inline_query<span style="color: #A1EFE4;">(</span>donde, <span style="color: #E6DB74;">[</span>que<span style="color: #E6DB74;">]</span><span style="color: #A1EFE4;">)</span>
-</pre>
+<pre><code class="python" >bot.answer_inline_query(donde, [que])
+</code></pre>
 </div>
 
 <dl>
@@ -512,23 +514,23 @@ En este caso si escriben <b>@awesome_ name_ for_ a_ bot hola</b>:
 
 </dl>
 </section>
-<section id="slide-orgheadline30">
-<h3 id="orgheadline30">Ejemplo</h3>
+<section id="slide-org70ffd25">
+<h3 id="org70ffd25">Ejemplo</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python">bot.answer_inline_query<span style="color: #A1EFE4;">(</span>inline_query.<span style="color: #F92672;">id</span>, <span style="color: #E6DB74;">[</span>r<span style="color: #E6DB74;">]</span><span style="color: #A1EFE4;">)</span>
-</pre>
+<pre><code class="python" >bot.answer_inline_query(inline_query.id, [r])
+</code></pre>
 </div>
 </section>
-<section id="slide-orgheadline31">
-<h3 id="orgheadline31">Ejemplo completo</h3>
+<section id="slide-orgf438f6a">
+<h3 id="orgf438f6a">Ejemplo completo</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #66D9EF;">@bot.inline_handler</span><span style="color: #A1EFE4;">(</span><span style="color: #F92672;">lambda</span> query: query.query == <span style="color: #E6DB74;">"hola"</span><span style="color: #A1EFE4;">)</span>
-<span style="color: #F92672;">def</span> <span style="color: #A6E22E;">hola</span><span style="color: #A1EFE4;">(</span>inline_query<span style="color: #A1EFE4;">)</span>:
-    <span style="color: #FD971F;">r</span> = types.InlineQueryResultArticle<span style="color: #A1EFE4;">(</span><span style="color: #E6DB74;">'1'</span>, <span style="color: #E6DB74;">'Saludo'</span>, types.InputTextMessageContent<span style="color: #E6DB74;">(</span><span style="color: #E6DB74;">"Well hello!"</span><span style="color: #E6DB74;">)</span><span style="color: #A1EFE4;">)</span>
-    bot.answer_inline_query<span style="color: #A1EFE4;">(</span>inline_query.<span style="color: #F92672;">id</span>, <span style="color: #E6DB74;">[</span>r<span style="color: #E6DB74;">]</span><span style="color: #A1EFE4;">)</span>
-</pre>
+<pre><code class="python" >@bot.inline_handler(lambda query: query.query == "hola")
+def hola(inline_query):
+    r = types.InlineQueryResultArticle('1', 'Saludo', types.InputTextMessageContent("Well hello!"))
+    bot.answer_inline_query(inline_query.id, [r])
+</code></pre>
 </div>
 
 <p>
@@ -552,31 +554,31 @@ Lo que contesta el bot:
 </p>
 </div>
 </section>
-<section id="slide-orgheadline32">
-<h3 id="orgheadline32">Ejemplo completo</h3>
+<section id="slide-orgaa9b7fe">
+<h3 id="orgaa9b7fe">Ejemplo completo</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #F92672;">import</span> telebot
-<span style="color: #F92672;">from</span> telebot <span style="color: #F92672;">import</span> types
+<pre><code class="python" >import telebot
+from telebot import types
 
-<span style="color: #75715E;"># </span><span style="color: #75715E;">Creamos el bot</span>
-<span style="color: #FD971F;">bot</span> = telebot.TeleBot<span style="color: #A1EFE4;">(</span><span style="color: #E6DB74;">"201337136:AAHc5lIPPqAFqAcX6bNMTNV2pFTzlbzsJtI"</span><span style="color: #A1EFE4;">)</span>
+# Creamos el bot
+bot = telebot.TeleBot("201337136:AAHc5lIPPqAFqAcX6bNMTNV2pFTzlbzsJtI")
 
 
-<span style="color: #66D9EF;">@bot.inline_handler</span><span style="color: #A1EFE4;">(</span><span style="color: #F92672;">lambda</span> query: query.query == <span style="color: #E6DB74;">"hola"</span><span style="color: #A1EFE4;">)</span>
-<span style="color: #F92672;">def</span> <span style="color: #A6E22E;">hola</span><span style="color: #A1EFE4;">(</span>inline_query<span style="color: #A1EFE4;">)</span>:
-    <span style="color: #75715E;"># </span><span style="color: #75715E;">Envia Well Hello</span>
-    <span style="color: #FD971F;">r</span> = types.InlineQueryResultArticle<span style="color: #A1EFE4;">(</span><span style="color: #E6DB74;">'1'</span>, <span style="color: #E6DB74;">'Saludo'</span>, types.InputTextMessageContent<span style="color: #E6DB74;">(</span><span style="color: #E6DB74;">"Well hello!"</span><span style="color: #E6DB74;">)</span><span style="color: #A1EFE4;">)</span>
-    bot.answer_inline_query<span style="color: #A1EFE4;">(</span>inline_query.<span style="color: #F92672;">id</span>, <span style="color: #E6DB74;">[</span>r<span style="color: #E6DB74;">]</span><span style="color: #A1EFE4;">)</span>
+@bot.inline_handler(lambda query: query.query == "hola")
+def hola(inline_query):
+    # Envia Well Hello
+    r = types.InlineQueryResultArticle('1', 'Saludo', types.InputTextMessageContent("Well hello!"))
+    bot.answer_inline_query(inline_query.id, [r])
 
-<span style="color: #75715E;"># </span><span style="color: #75715E;">Iniciamos el bot</span>
-<span style="color: #F92672;">print</span><span style="color: #A1EFE4;">(</span><span style="color: #E6DB74;">"Running..."</span><span style="color: #A1EFE4;">)</span>
-bot.polling<span style="color: #A1EFE4;">()</span>
-</pre>
+# Iniciamos el bot
+print("Running...")
+bot.polling()
+</code></pre>
 </div>
 </section>
-<section id="slide-orgheadline33">
-<h3 id="orgheadline33">Permitir inline</h3>
+<section id="slide-org5cba4b1">
+<h3 id="org5cba4b1">Permitir inline</h3>
 <p>
 Una vez más acudiremos a BotFather
 </p>
@@ -589,8 +591,8 @@ Una vez más acudiremos a BotFather
 </section>
 </section>
 <section>
-<section id="slide-orgheadline36">
-<h2 id="orgheadline36">De donde puedo aprender cosas?</h2>
+<section id="slide-orgcd15fa2">
+<h2 id="orgcd15fa2">De donde puedo aprender cosas?</h2>
 <p>
 La API está bastante bien documentada con los ejemplos
 </p>
@@ -600,8 +602,8 @@ La API está bastante bien documentada con los ejemplos
 </p>
 
 </section>
-<section id="slide-orgheadline35">
-<h3 id="orgheadline35">Ejemplos que encontréis por ahí</h3>
+<section id="slide-org15aada2">
+<h3 id="org15aada2">Ejemplos que encontréis por ahí</h3>
 <ul>
 <li>El bot de ACM</li>
 
@@ -637,7 +639,7 @@ controls: true,
 progress: true,
 history: true,
 center: true,
-slideNumber: true,
+slideNumber: 'h/v',
 rollingLinks: false,
 keyboard: true,
 overview: true,
@@ -658,14 +660,14 @@ multiplex: {
 
 // Optional libraries used to extend on reveal.js
 dependencies: [
-{ src: './acm.js', async: true },
  { src: 'file:///home/ironjanowar/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
  { src: 'file:///home/ironjanowar/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
  { src: 'file:///home/ironjanowar/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
  { src: 'file:///home/ironjanowar/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
  { src: '', async: true },
  { src: 'file:///home/ironjanowar/reveal.js/plugin/multiplex/master.js', async: true },
- { src: 'file:///home/ironjanowar/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } }]
+ { src: 'file:///home/ironjanowar/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'file:///home/ironjanowar/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }]
 });
 </script>
 </body>
